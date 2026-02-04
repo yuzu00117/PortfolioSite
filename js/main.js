@@ -1,5 +1,5 @@
-// ===================================
-// Portfolio Website - Main JavaScript
+﻿// ===================================
+// ポートフォリオサイト - メインJavaScript
 // ===================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===================================
-// Navbar Scroll Effect
+// ナビバーのスクロールエフェクト
 // ===================================
 function initNavbar() {
   const navbar = document.querySelector('.navbar');
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
 
-  // Add scrolled class on scroll
+  // スクロール時にscrolledクラスを追加
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       navbar.classList.add('scrolled');
@@ -25,7 +25,7 @@ function initNavbar() {
       navbar.classList.remove('scrolled');
     }
 
-    // Update active nav link based on scroll position
+    // スクロール位置に基づいてアクティブなナビリンクを更新
     updateActiveNavLink(sections, navLinks);
   });
 }
@@ -50,11 +50,11 @@ function updateActiveNavLink(sections, navLinks) {
 }
 
 // ===================================
-// Smooth Scroll
+// スムーズスクロール
 // ===================================
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
@@ -68,7 +68,7 @@ function initSmoothScroll() {
           behavior: 'smooth'
         });
 
-        // Close mobile menu if open
+        // モバイルメニューが開いている場合は閉じる
         document.querySelector('.nav-menu').classList.remove('active');
       }
     });
@@ -76,7 +76,7 @@ function initSmoothScroll() {
 }
 
 // ===================================
-// Scroll Animations (Intersection Observer)
+// スクロールアニメーション（Intersection Observer）
 // ===================================
 function initScrollAnimations() {
   const fadeElements = document.querySelectorAll('.fade-in');
@@ -102,7 +102,7 @@ function initScrollAnimations() {
 }
 
 // ===================================
-// Mobile Menu Toggle
+// モバイルメニューの切り替え
 // ===================================
 function initMobileMenu() {
   const navToggle = document.querySelector('.nav-toggle');
@@ -114,7 +114,7 @@ function initMobileMenu() {
     });
   }
 
-  // Close menu when clicking outside
+  // メニュー外をクリックした時にメニューを閉じる
   document.addEventListener('click', (e) => {
     if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
       navMenu.classList.remove('active');
@@ -123,12 +123,12 @@ function initMobileMenu() {
 }
 
 // ===================================
-// Utility: Add Work Item (for future use)
+// ユーティリティ: 作品アイテムの追加（将来の使用のため）
 // ===================================
 function addWorkItem(work) {
   const worksGrid = document.querySelector('.works-grid');
   const emptyState = worksGrid.querySelector('.works-empty');
-  
+
   if (emptyState) {
     emptyState.remove();
   }
@@ -137,10 +137,10 @@ function addWorkItem(work) {
   workCard.className = 'work-card fade-in';
   workCard.innerHTML = `
     <div class="work-thumbnail">
-      ${work.thumbnail 
-        ? `<img src="${work.thumbnail}" alt="${work.title}">`
-        : '<div class="work-thumbnail-placeholder">?</div>'
-      }
+      ${work.thumbnail
+      ? `<img src="${work.thumbnail}" alt="${work.title}">`
+      : '<div class="work-thumbnail-placeholder">?</div>'
+    }
     </div>
     <div class="work-info">
       <h3 class="work-title">${work.title}</h3>
@@ -156,7 +156,7 @@ function addWorkItem(work) {
   `;
 
   worksGrid.appendChild(workCard);
-  
-  // Trigger animation
+
+  // アニメーションを発火
   setTimeout(() => workCard.classList.add('visible'), 100);
 }
