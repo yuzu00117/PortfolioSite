@@ -136,7 +136,7 @@
         <!-- サンプル作品カード -->
 
         <!-- サンプルプロジェクト 1 -->
-        <article class="work-card fade-in">
+        <article class="work-card fade-in" data-project-id="project1">
           <div class="work-thumbnail">
             <div class="work-thumbnail-placeholder">&#127918;</div>
           </div>
@@ -157,7 +157,7 @@
         </article>
 
         <!-- サンプルプロジェクト 2 -->
-        <article class="work-card fade-in">
+        <article class="work-card fade-in" data-project-id="project2">
           <div class="work-thumbnail">
             <div class="work-thumbnail-placeholder">&#128377;</div>
           </div>
@@ -177,7 +177,7 @@
         </article>
 
         <!-- サンプルプロジェクト 3 -->
-        <article class="work-card fade-in">
+        <article class="work-card fade-in" data-project-id="project3">
           <div class="work-thumbnail">
             <div class="work-thumbnail-placeholder">&#127912;</div>
           </div>
@@ -355,6 +355,43 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===================================
+       プロジェクト詳細モーダル
+       =================================== -->
+  <div class="project-modal" id="projectModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる">&times;</button>
+
+      <!-- ギャラリースライダー -->
+      <div class="modal-gallery">
+        <div class="gallery-container">
+          <div class="gallery-slides" id="gallerySlides">
+            <!-- スライド画像がJSで挿入される -->
+          </div>
+        </div>
+        <button class="gallery-nav gallery-prev" aria-label="前へ">&#10094;</button>
+        <button class="gallery-nav gallery-next" aria-label="次へ">&#10095;</button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+
+      <!-- プロジェクト情報 -->
+      <div class="modal-body">
+        <h2 class="modal-title" id="modalTitle"></h2>
+
+        <div class="modal-meta" id="modalMeta">
+          <!-- 開発期間、チーム構成など -->
+        </div>
+
+        <p class="modal-description" id="modalDescription"></p>
+
+        <div class="modal-tags" id="modalTags"></div>
+
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- スクリプト -->
   <script src="js/main.js"></script>
