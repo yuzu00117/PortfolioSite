@@ -166,25 +166,26 @@ function addWorkItem(work) {
 // プロジェクトモーダル
 // ===================================
 
-// プロジェクトデータ（後で実際のデータに置き換え可能）
+// プロジェクトデータ（後で実際のデータに置き換え）
 const projectsData = {
   project1: {
-    title: 'Sample Project 1',
-    description: 'ここにプロジェクトの詳しい説明が入ります。このプロジェクトでは、Unityを使用してゲームを開発しました。プレイヤーの操作感を重視し、スムーズなゲームプレイを実現するために様々な工夫を施しました。',
-    tags: ['Unity', 'C#'],
+    title: 'PinballBattle',
+    description: 'DirectX11で作成したピンボールゲーム',
+    tags: ['C++', 'DirectX'],
     meta: {
-      period: '2025/01 - 2025/03',
-      team: '3人',
-      role: 'プログラマー'
+      period: '2025/12~',
+      team: '個人制作',
+      role: 'すべて'
     },
     gallery: [
-      { type: 'placeholder', icon: '🎮' },
+      // プレイ動画
+      { type: 'youtube', videoId: '51gza8n9dzo' }
       // 実際の画像: { type: 'image', src: 'path/to/image.jpg', alt: '説明' }
-      // YouTube: { type: 'youtube', videoId: 'VIDEO_ID' }
     ],
+
+    // 各種リンク
     links: {
-      github: '#',
-      demo: '#',
+      github: 'https://github.com/yuzu00117/PinballGame',
       // youtube: 'https://youtube.com/watch?v=...'
     }
   },
