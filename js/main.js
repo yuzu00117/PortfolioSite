@@ -179,8 +179,11 @@ const projectsData = {
     },
     gallery: [
       // プレイ動画
-      { type: 'youtube', videoId: '51gza8n9dzo' }
-      // 実際の画像: { type: 'image', src: 'path/to/image.jpg', alt: '説明' }
+      { type: 'youtube', videoId: '51gza8n9dzo' },
+      // ゲーム画面（画像）
+      { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot1.png', alt: 'ゲーム画面1' },
+      { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot2.png', alt: 'ゲーム画面2' },
+      { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot3.png', alt: 'ゲーム画面3' },
     ],
 
     // 各種リンク
@@ -190,32 +193,38 @@ const projectsData = {
     }
   },
   project2: {
-    title: 'Sample Project 2',
-    description: 'C++とDirectXを使用した3Dゲームの開発プロジェクトです。低レベルのグラフィックスプログラミングを学び、パフォーマンス最適化に取り組みました。',
-    tags: ['C++', 'DirectX'],
+    title: '妖魔一閃',
+    description: 'Unityで作成した3Dアクションゲーム',
+    tags: ['C#', 'Unity'],
     meta: {
-      period: '2024/10 - 2025/01',
-      team: '個人制作',
-      role: 'すべて担当'
+      period: '2025/04 - 2025/07',
+      team: '15人（プログラマー6人、プランナー2人、デザイナー7人）',
+      role: 'プログラマー'
     },
     gallery: [
-      { type: 'placeholder', icon: '🕹️' }
+      { type: 'youtube', videoId: 'wpPjdlnlu3U' },
+      { type: 'image', src: 'images/youmaissenn/youmaissenn-screenshot1.png', alt: 'ゲーム画面1' },
+      { type: 'image', src: 'images/youmaissenn/youmaissenn-screenshot2.png', alt: 'ゲーム画面2' },
+      { type: 'image', src: 'images/youmaissenn/youmaissenn-screenshot3.png', alt: 'ゲーム画面3' },
     ],
     links: {
       github: '#'
     }
   },
   project3: {
-    title: 'Sample Project 3',
-    description: 'Blenderで3Dモデルを制作し、Unityに統合したプロジェクトです。ローポリスタイルのキャラクターモデリングとアニメーション制作を担当しました。',
-    tags: ['Blender', 'Unity'],
+    title: 'SoulAnchor',
+    description: 'DirectX11で作成した2Dアクションゲーム',
+    tags: ['C++', 'DirectX'],
     meta: {
-      period: '2024/08 - 2024/09',
+      period: '2024/09 - 2025/02',
       team: '2人',
-      role: '3Dモデラー'
+      role: 'プログラマー'
     },
     gallery: [
-      { type: 'placeholder', icon: '🎨' }
+      { type: 'youtube', videoId: 'Q0mgrDd89GE' },
+      { type: 'image', src: 'images/soulanchor/soulanchor-screenshot1.png', alt: 'ゲーム画面1' },
+      { type: 'image', src: 'images/soulanchor/soulanchor-screenshot2.png', alt: 'ゲーム画面2' },
+      { type: 'image', src: 'images/soulanchor/soulanchor-screenshot3.png', alt: 'ゲーム画面3' },
     ],
     links: {
       demo: '#'
