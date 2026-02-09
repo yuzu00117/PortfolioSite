@@ -150,7 +150,7 @@ function addWorkItem(work) {
         ${work.tags.map(tag => `<span class="work-tag">${tag}</span>`).join('')}
       </div>
       <div class="work-links">
-        ${work.github ? `<a href="${work.github}" class="work-link" target="_blank">? GitHub</a>` : ''}
+        ${work.github ? `<a href="${work.github}" class="work-link" target="_blank"><i class="devicon-github-original"></i> GitHub</a>` : ''}
         ${work.demo ? `<a href="${work.demo}" class="work-link" target="_blank">? Demo</a>` : ''}
       </div>
     </div>
@@ -326,7 +326,7 @@ function openModal(project) {
     if (project.links.github) {
       linksContainer.innerHTML += `
         <a href="${project.links.github}" class="modal-link" target="_blank" rel="noopener noreferrer">
-          📂 GitHub
+          <i class="devicon-github-original"></i> GitHub
         </a>
       `;
     }
