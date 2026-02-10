@@ -208,7 +208,7 @@ const projectsData = {
       { type: 'image', src: 'images/youmaissenn/youmaissenn-screenshot3.png', alt: 'ゲーム画面3' },
     ],
     links: {
-      github: '#'
+      github: 'https://github.com/yuzu00117/2025Gamejam'
     }
   },
   project3: {
@@ -227,7 +227,25 @@ const projectsData = {
       { type: 'image', src: 'images/soulanchor/soulanchor-screenshot3.png', alt: 'ゲーム画面3' },
     ],
     links: {
-      demo: '#'
+      github: 'https://github.com/yuzu00117/2025_HEW'
+    }
+  },
+  project4: {
+    title: 'Tetris-rs',
+    description: 'Rustで作成したテトリスゲーム',
+    tags: ['Rust'],
+    meta: {
+      period: '2024/07 - 2024/08',
+      team: '個人制作',
+      role: 'すべて'
+    },
+    gallery: [
+      { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot1.png', alt: 'ゲーム画面1' },
+      { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot2.png', alt: 'ゲーム画面2' },
+      { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot3.png', alt: 'ゲーム画面3' },
+    ],
+    links: {
+      github: 'https://github.com/yuzu00117/tetris_rs'
     }
   }
 };
