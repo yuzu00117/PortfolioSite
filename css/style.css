@@ -424,6 +424,8 @@ img {
   overflow: hidden;
   border: 1px solid var(--border-color);
   transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
 }
 
 .work-card:hover {
@@ -450,6 +452,9 @@ img {
 
 .work-info {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .work-title {
@@ -463,6 +468,7 @@ img {
   color: var(--color-text-secondary);
   margin-bottom: 16px;
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 .work-tags {
