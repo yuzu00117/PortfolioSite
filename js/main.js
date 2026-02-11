@@ -170,7 +170,7 @@ function addWorkItem(work) {
 const projectsData = {
   project1: {
     title: 'PinballBattle',
-    description: 'DirectX11で作成したピンボールゲーム',
+    description: '就職作品として作成しているピンボールゲームです。コード品質を重視した開発を行いました。',
     tags: ['C++', 'DirectX'],
     meta: {
       period: '2025/12~',
@@ -185,7 +185,48 @@ const projectsData = {
       { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot2.png', alt: 'ゲーム画面2' },
       { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot3.png', alt: 'ゲーム画面3' },
     ],
-
+    sections: [
+      {
+        // どのようなプロジェクトか、なぜ作ったのか、どのようなこだわりがあるかを説明する
+        // 何 → なぜ → どうやって？ を説明する
+        heading: '概要',
+        items: [
+          'フリッパーで球を弾き、現れる敵を倒して高スコアを目指すピンボールゲームです。' +
+          '自分の課題であると感じた設計力を培うため、コードの拡張性と保守性にこだわり開発しました。' +
+          'Unityのコンポーネントアーキテクチャを参考に、Transform / Collider / Rendererなどを自前実装しています。'
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          'Unityを参考にし、Transform / Collider / Renderer / GameObject を DirectX 上で自前実装',
+          '物理 / 描画 / ロジックを明確に分け、拡張しやすいフレームワークを構築',
+          'コライダー表示・デバッグ描画により迅速な検証が可能な環境を整備',
+          '可読性と保守性を重視したコメントをつけるように意識',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+    ],
     // 各種リンク
     links: {
       github: 'https://github.com/yuzu00117/PinballGame',
@@ -194,7 +235,7 @@ const projectsData = {
   },
   project2: {
     title: '妖魔一閃',
-    description: 'Unityで作成した3Dアクションゲーム',
+    description: '学内の共同制作で開発した3D/2Dアクションゲームです。ライン移動とダッシュ攻撃を駆使してハイスコアを目指します。',
     tags: ['C#', 'Unity'],
     meta: {
       period: '2025/04 - 2025/07',
@@ -207,17 +248,54 @@ const projectsData = {
       { type: 'image', src: 'images/youmaissenn/youmaissenn-screenshot2.png', alt: 'ゲーム画面2' },
       { type: 'image', src: 'images/youmaissenn/youmaissenn-screenshot3.png', alt: 'ゲーム画面3' },
     ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+    ],
     links: {
       github: 'https://github.com/yuzu00117/2025Gamejam'
     }
   },
   project3: {
     title: 'SoulAnchor',
-    description: 'DirectX11で作成した2Dアクションゲーム',
+    description: '学内での共同制作で開発した、2D横スクロールアクションです。錨ならではのアクションを楽しみながらステージを進んでいきます。',
     tags: ['C++', 'DirectX'],
     meta: {
       period: '2024/09 - 2025/02',
-      team: '2人',
+      team: '12人',
       role: 'プログラマー'
     },
     gallery: [
@@ -226,13 +304,51 @@ const projectsData = {
       { type: 'image', src: 'images/soulanchor/soulanchor-screenshot2.png', alt: 'ゲーム画面2' },
       { type: 'image', src: 'images/soulanchor/soulanchor-screenshot3.png', alt: 'ゲーム画面3' },
     ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          '錨を投げてものを倒す独自のアクションでステージを攻略する、2D横スクロールアクションゲームです。' +
+          'チーム制作の経験を積むことを目的に、12人チームで開発しました。' +
+          'プログラマーとして企画から実装までを担当し、Gitでのコード管理も行いました。'
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          'GitでのPRレビュー・承認など、コード品質の管理',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+    ],
     links: {
       github: 'https://github.com/yuzu00117/2025_HEW'
     }
   },
   project4: {
     title: 'Tetris-rs',
-    description: 'Rustで作成したテトリスゲーム',
+    description: 'Rustの学習を目的に個人で作成したテトリスゲームです。新しい言語に挑戦してみたいという思いから開発に取り組みました。',
     tags: ['Rust'],
     meta: {
       period: '2024/07 - 2024/08',
@@ -243,6 +359,43 @@ const projectsData = {
       { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot1.png', alt: 'ゲーム画面1' },
       { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot2.png', alt: 'ゲーム画面2' },
       { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot3.png', alt: 'ゲーム画面3' },
+    ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          'これは例文です',
+          'これは例文です',
+        ]
+      },
     ],
     links: {
       github: 'https://github.com/yuzu00117/tetris_rs'
@@ -300,6 +453,22 @@ function openModal(project) {
 
   // 説明
   document.getElementById('modalDescription').textContent = project.description;
+
+  // 詳細セクション
+  const sectionsContainer = document.getElementById('modalSections');
+  sectionsContainer.innerHTML = '';
+  if (project.sections) {
+    project.sections.forEach(section => {
+      sectionsContainer.innerHTML += `
+        <div class="modal-section">
+          <h3 class="modal-section-heading">${section.heading}</h3>
+          <ul class="modal-section-list">
+            ${section.items.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    });
+  }
 
   // メタ情報
   const metaContainer = document.getElementById('modalMeta');
