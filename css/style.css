@@ -900,8 +900,7 @@ body.menu-open {
     margin-bottom: 36px;
   }
 
-  .works,
-  .skills {
+  .works {
     overflow-x: hidden;
   }
 
