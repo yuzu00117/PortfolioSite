@@ -563,6 +563,12 @@ function openModal(project) {
   // ギャラリー
   setupGallery(project.gallery);
 
+  // モーダルのスクロール位置をリセット
+  const modalContent = modal.querySelector('.modal-content');
+  if (modalContent) {
+    modalContent.scrollTop = 0;
+  }
+
   // モーダルを表示
   modal.classList.add('active');
   document.body.classList.add('modal-open');
