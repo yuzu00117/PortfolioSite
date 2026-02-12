@@ -384,9 +384,10 @@ const projectsData = {
       role: 'すべて'
     },
     gallery: [
+      // プレイ動画
+      { type: 'youtube', videoId: '9Hu2YMc3OCU' },
+      // スクリーンショット
       { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot1.png', alt: 'ゲーム画面1' },
-      { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot2.png', alt: 'ゲーム画面2' },
-      { type: 'image', src: 'images/tetris-rs/tetris-rs-screenshot3.png', alt: 'ゲーム画面3' },
     ],
     sections: [
       {
