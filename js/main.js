@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initMobileMenu();
   initProjectModal();
+  initSwipeCarousels();
 });
 
 // ===================================
@@ -108,17 +109,31 @@ function initScrollAnimations() {
 function initMobileMenu() {
   const navToggle = document.querySelector('.nav-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
 
   if (navToggle) {
     navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      const isOpen = navMenu.classList.toggle('active');
+      navToggle.classList.toggle('active', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
     });
   }
+
+  // メニューリンクをクリックした時にメニューを閉じる
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  });
 
   // メニュー外をクリックした時にメニューを閉じる
   document.addEventListener('click', (e) => {
     if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
       navMenu.classList.remove('active');
+      navToggle.classList.remove('active');
+      document.body.classList.remove('menu-open');
     }
   });
 }
@@ -667,3 +682,88 @@ function updateGalleryPosition() {
   });
 }
 
+// ===================================
+// スワイプカルーセル（Works / Skills）
+// ===================================
+function initSwipeCarousels() {
+  const MOBILE_BP = 768;
+
+  const carousels = [
+    { container: document.querySelector('.works-grid'), itemSelector: '.work-card' },
+    { container: document.querySelector('.skills-grid'), itemSelector: '.skill-card' },
+  ];
+
+  // 各カルーセルの状態を保持
+  const state = carousels.map(() => ({ dotsEl: null, observer: null }));
+
+  function setup() {
+    if (window.innerWidth > MOBILE_BP) {
+      teardown();
+      return;
+    }
+
+    carousels.forEach((cfg, ci) => {
+      const { container, itemSelector } = cfg;
+      if (!container) return;
+
+      // 既にセットアップ済みならスキップ
+      if (state[ci].dotsEl) return;
+
+      const items = container.querySelectorAll(itemSelector);
+      if (items.length <= 1) return;
+
+      // ドットコンテナを作成
+      const dotsEl = document.createElement('div');
+      dotsEl.className = 'swipe-dots';
+      items.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = `swipe-dot${i === 0 ? ' active' : ''}`;
+        dot.addEventListener('click', () => {
+          items[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+        dotsEl.appendChild(dot);
+      });
+      container.parentNode.insertBefore(dotsEl, container.nextSibling);
+      state[ci].dotsEl = dotsEl;
+
+      // IntersectionObserver でアクティブドットを更新
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const idx = Array.from(items).indexOf(entry.target);
+            dotsEl.querySelectorAll('.swipe-dot').forEach((d, di) => {
+              d.classList.toggle('active', di === idx);
+            });
+          }
+        });
+      }, {
+        root: container,
+        threshold: 0.6,
+      });
+
+      items.forEach(item => observer.observe(item));
+      state[ci].observer = observer;
+    });
+  }
+
+  function teardown() {
+    state.forEach((s, ci) => {
+      if (s.dotsEl) {
+        s.dotsEl.remove();
+        s.dotsEl = null;
+      }
+      if (s.observer) {
+        s.observer.disconnect();
+        s.observer = null;
+      }
+    });
+  }
+
+  setup();
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setup, 150);
+  });
+}
