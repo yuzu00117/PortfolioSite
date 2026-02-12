@@ -906,23 +906,29 @@ body.menu-open {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
-    padding-bottom: 8px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 7.5vw 8px;
     scrollbar-width: none;
-    /* Firefox */
   }
 
   .works-grid::-webkit-scrollbar {
     display: none;
-    /* Chrome / Safari */
   }
 
   .work-card {
-    flex: 0 0 85%;
+    flex: 0 0 85vw;
     scroll-snap-align: center;
   }
 
-  .work-card:hover {
+  .work-card.fade-in {
+    opacity: 1;
     transform: none;
+  }
+
+  .work-card:hover {
+    transform: none !important;
+    box-shadow: none;
   }
 
   .work-info {
@@ -939,23 +945,18 @@ body.menu-open {
 
   /* --- スキルセクション（横スワイプ） --- */
   .skills-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 12px;
-    padding-bottom: 8px;
-    scrollbar-width: none;
-  }
-
-  .skills-grid::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 
   .skill-card {
-    flex: 0 0 42%;
-    scroll-snap-align: start;
-    padding: 28px 16px;
+    padding: 16px 8px;
+  }
+
+  .skill-card.fade-in {
+    opacity: 1;
+    transform: none;
   }
 
   .skill-icon {
@@ -973,7 +974,8 @@ body.menu-open {
   }
 
   .skill-card:hover {
-    transform: none;
+    transform: none !important;
+    box-shadow: none;
   }
 
   /* --- フッター --- */
