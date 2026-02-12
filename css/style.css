@@ -911,9 +911,7 @@ body.menu-open {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
-    margin-left: -16px;
-    margin-right: -16px;
-    padding: 0 7.5vw 8px;
+    padding-bottom: 8px;
     scrollbar-width: none;
   }
 
@@ -922,8 +920,8 @@ body.menu-open {
   }
 
   .work-card {
-    flex: 0 0 85vw;
-    scroll-snap-align: center;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
   }
 
   .work-card.fade-in {
