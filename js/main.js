@@ -322,6 +322,7 @@ const projectsData = {
       { type: 'image', src: 'images/soulanchor/soulanchor-screenshot1.png', alt: 'ゲーム画面1' },
       { type: 'image', src: 'images/soulanchor/soulanchor-screenshot2.png', alt: 'ゲーム画面2' },
       { type: 'image', src: 'images/soulanchor/soulanchor-screenshot3.png', alt: 'ゲーム画面3' },
+      { type: 'image', src: 'images/soulanchor/soulanchor-screenshot4.png', alt: 'ゲーム画面4' },
     ],
     sections: [
       {
