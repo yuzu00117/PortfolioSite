@@ -906,23 +906,29 @@ body.menu-open {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
-    padding-bottom: 8px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 7.5vw 8px;
     scrollbar-width: none;
-    /* Firefox */
   }
 
   .works-grid::-webkit-scrollbar {
     display: none;
-    /* Chrome / Safari */
   }
 
   .work-card {
-    flex: 0 0 85%;
+    flex: 0 0 85vw;
     scroll-snap-align: center;
   }
 
-  .work-card:hover {
+  .work-card.fade-in {
+    opacity: 1;
     transform: none;
+  }
+
+  .work-card:hover {
+    transform: none !important;
+    box-shadow: none;
   }
 
   .work-info {
@@ -943,8 +949,10 @@ body.menu-open {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 12px;
-    padding-bottom: 8px;
+    gap: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 calc(50vw - 100px) 8px;
     scrollbar-width: none;
   }
 
@@ -953,9 +961,16 @@ body.menu-open {
   }
 
   .skill-card {
-    flex: 0 0 42%;
-    scroll-snap-align: start;
-    padding: 28px 16px;
+    flex: 0 0 200px;
+    scroll-snap-align: center;
+    padding: 40px 30px;
+    aspect-ratio: 1;
+    justify-content: center;
+  }
+
+  .skill-card.fade-in {
+    opacity: 1;
+    transform: none;
   }
 
   .skill-icon {
@@ -973,7 +988,8 @@ body.menu-open {
   }
 
   .skill-card:hover {
-    transform: none;
+    transform: none !important;
+    box-shadow: none;
   }
 
   /* --- フッター --- */
