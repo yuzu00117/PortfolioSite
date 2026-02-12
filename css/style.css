@@ -900,6 +900,11 @@ body.menu-open {
     margin-bottom: 36px;
   }
 
+  .works,
+  .skills {
+    overflow-x: hidden;
+  }
+
   .works-grid {
     display: flex;
     overflow-x: auto;
