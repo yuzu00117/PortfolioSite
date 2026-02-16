@@ -186,7 +186,7 @@ const projectsData = {
   project1: {
     title: 'PinballBattle',
     description: '就職作品として作成しているピンボールゲームです。コード品質を重視した開発を行いました。',
-    tags: ['C++', 'DirectX'],
+    tags: ['Game', 'C++', 'DirectX'],
     meta: {
       period: '2025/12~',
       team: '個人制作',
@@ -262,7 +262,7 @@ const projectsData = {
   project2: {
     title: '妖魔一閃',
     description: '学内の共同制作で開発した3D/2Dアクションゲームです。ライン移動とダッシュ攻撃を駆使してハイスコアを目指します。',
-    tags: ['C#', 'Unity'],
+    tags: ['Game', 'C#', 'Unity'],
     meta: {
       period: '2025/04 - 2025/07',
       team: '15人（プログラマー6人、プランナー2人、デザイナー7人）',
@@ -326,7 +326,7 @@ const projectsData = {
   project3: {
     title: 'SoulAnchor',
     description: '学内での共同制作で開発した、2D横スクロールアクションです。錨ならではのアクションを楽しみながらステージを進んでいきます。',
-    tags: ['C++', 'DirectX'],
+    tags: ['Game', 'C++', 'DirectX'],
     meta: {
       period: '2024/09 - 2025/02',
       team: '12人',
@@ -393,7 +393,7 @@ const projectsData = {
   project4: {
     title: 'Tetris-rs',
     description: 'Rustの学習を目的に個人で作成したテトリスゲームです。新しい言語に挑戦してみたいという思いから開発に取り組みました。',
-    tags: ['Rust'],
+    tags: ['Game', 'Rust'],
     meta: {
       period: '2024/07 - 2024/08',
       team: '個人制作',
@@ -446,6 +446,31 @@ const projectsData = {
     ],
     links: {
       github: 'https://github.com/yuzu00117/tetris_rs'
+    }
+  },
+  video1: {
+    title: 'Video Project (Placeholder)',
+    description: '制作中の映像作品です。詳細が決まり次第更新します。',
+    tags: ['Video', 'Premiere Pro', 'After Effects'],
+    meta: {
+      period: 'yyyy/mm - yyyy/mm',
+      team: '個人制作 / チーム',
+      role: 'Video Editor'
+    },
+    gallery: [
+      { type: 'placeholder', icon: '🎥' }
+    ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'このプロジェクトは現在準備中です。',
+          '映像制作における技術や工夫した点をここに掲載予定です。'
+        ]
+      }
+    ],
+    links: {
+      // youtube: '...'
     }
   }
 };
