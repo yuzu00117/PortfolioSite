@@ -764,21 +764,26 @@ img {
 }
 
 /* ===================================
-   レスポンシブデザイン
+   レスポンシブデザイン (Mobile Optimization)
    =================================== */
 
-/* スクロール防止（メニュー展開時） */
-body.menu-open {
+/* スクロール防止（メニュー展開時・モーダル表示時） */
+body.menu-open,
+body.modal-open {
   overflow: hidden;
+  touch-action: none;
+  /* モバイルでのスクロールを完全に防止 */
 }
 
+/* --- タブレット & モバイル (max-width: 768px) --- */
 @media (max-width: 768px) {
   :root {
     --section-padding: 60px 0;
+    --container-padding: 20px;
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 var(--container-padding);
   }
 
   /* --- ナビゲーション --- */
@@ -791,9 +796,9 @@ body.menu-open {
     top: 0;
     right: -100%;
     width: 100%;
-    height: 100vh;
     height: 100dvh;
-    background: rgba(10, 10, 15, 0.97);
+    /* dvhを使用してモバイルブラウザのアドレスバー対策 */
+    background: rgba(10, 10, 15, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
@@ -801,6 +806,8 @@ body.menu-open {
     align-items: center;
     gap: 32px;
     transition: right var(--transition-normal);
+    z-index: 999;
+    /* nav-toggleより下にする */
   }
 
   .nav-menu.active {
@@ -808,13 +815,17 @@ body.menu-open {
   }
 
   .nav-link {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     letter-spacing: 0.15em;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
   }
 
   .nav-toggle {
     display: flex;
     z-index: 1001;
+    /* 最前面 */
   }
 
   /* ハンバーガー → × アニメーション */
@@ -838,7 +849,17 @@ body.menu-open {
   /* --- ヒーローセクション --- */
   .hero {
     min-height: 100svh;
+    /* svhでより自然な高さに */
+    padding: 0;
+  }
+
+  .hero-content {
     padding: 0 16px;
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
   }
 
   .hero-subtitle {
@@ -851,6 +872,7 @@ body.menu-open {
     max-width: 280px;
     justify-content: center;
     padding: 14px 24px;
+    margin-top: 10px;
   }
 
   .scroll-indicator {
@@ -860,125 +882,99 @@ body.menu-open {
   /* --- Aboutセクション --- */
   .about-content {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
 
   .about-image-wrapper {
-    max-width: 220px;
+    max-width: 240px;
     margin: 0 auto;
+    border-radius: 50%;
+    /* モバイルでは丸くする */
   }
 
-  .about-text h3 {
-    font-size: 1.4rem;
+  .about-text {
     text-align: center;
   }
 
+  .about-text h3 {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   .about-text p {
-    font-size: 0.9rem;
+    text-align: left;
+    font-size: 0.95rem;
   }
 
   .about-info {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr;
+    /* 1列にする */
+    gap: 12px;
+    text-align: left;
   }
 
   .about-info-item {
-    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
   }
 
   .about-info-label {
-    font-size: 0.7rem;
-    margin-bottom: 2px;
+    margin-bottom: 0;
   }
 
-  .about-info-value {
-    font-size: 0.8rem;
-    word-break: break-all;
-  }
-
-  /* --- 作品セクション（横スワイプ） --- */
+  /* --- 作品 & スキルセクション（横スクロール） --- */
   .section-header {
-    margin-bottom: 36px;
+    margin-bottom: 40px;
   }
 
-  .works {
-    overflow-x: hidden;
-  }
-
-  .works-grid {
+  /* グリッドレイアウトを解除してフレックス（横スクロール）に変更 */
+  .works-grid,
+  .skills-grid {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     gap: 16px;
-    padding-bottom: 8px;
+    padding-bottom: 24px;
+    /* スクロールバー/ドットのスペース */
+    margin: 0 -20px;
+    /* コンテナのパディングを相殺 */
+    padding-left: 20px;
+    padding-right: 20px;
+    /* スクロールバー非表示 */
     scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
-  .works-grid::-webkit-scrollbar {
+  .works-grid::-webkit-scrollbar,
+  .skills-grid::-webkit-scrollbar {
     display: none;
   }
 
-  .work-card {
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-  }
-
-  .work-card.fade-in {
-    opacity: 1;
-    transform: none;
-  }
-
-  .work-card:hover {
-    transform: none !important;
-    box-shadow: none;
-  }
-
-  .work-info {
-    padding: 18px;
-  }
-
-  .work-title {
-    font-size: 1.125rem;
-  }
-
-  .work-description {
-    font-size: 0.825rem;
-  }
-
-  /* --- スキルセクション（横スワイプ） --- */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
+  .work-card,
   .skill-card {
-    padding: 16px 8px;
+    flex: 0 0 85%;
+    /* 画面の85%の幅 */
+    scroll-snap-align: center;
+    margin: 0;
   }
 
-  .skill-card.fade-in {
-    opacity: 1;
-    transform: none;
-  }
-
-  .skill-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 14px;
-  }
-
-  .skill-icon i {
-    font-size: 2.2rem;
-  }
-
-  .skill-name {
-    font-size: 0.95rem;
-  }
-
+  /* ホバーエフェクトの無効化（タッチデバイス） */
+  .work-card:hover,
   .skill-card:hover {
-    transform: none !important;
-    box-shadow: none;
+    transform: none;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* スキルカードの調整 */
+  .skill-card {
+    flex: 0 0 160px;
+    /* スキルは少し小さめに */
+    padding: 24px 16px;
   }
 
   /* --- フッター --- */
@@ -989,32 +985,119 @@ body.menu-open {
   .footer-links {
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
+    gap: 16px;
   }
 
   .footer-link {
     justify-content: center;
-    font-size: 0.8rem;
-    padding: 10px 20px;
+    width: 100%;
+  }
+
+  /* --- プロジェクトモーダル (モバイル最適化) --- */
+  .modal-content {
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    max-width: 100%;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-close {
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(10, 10, 15, 0.5);
+    /* 背景を見やすく */
+    backdrop-filter: blur(4px);
+    z-index: 20;
+  }
+
+  .modal-gallery {
+    flex-shrink: 0;
+    /* ギャラリーは縮小しない */
+    aspect-ratio: 16/9;
+  }
+
+  .modal-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 24px 20px 80px;
+    /* 下部に余白を持たせる */
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
+
+  .modal-meta {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .modal-meta-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+  }
+
+  .modal-meta-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .modal-links {
+    flex-direction: column;
+  }
+
+  .modal-link {
+    justify-content: center;
+    width: 100%;
   }
 }
 
-/* --- 480px 以下 --- */
+/* --- 小型モバイル (max-width: 480px) --- */
 @media (max-width: 480px) {
-  .skill-card {
-    flex: 0 0 65%;
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-role {
+    font-size: 1.25rem;
   }
 
   .about-image-wrapper {
     max-width: 180px;
   }
 
-  .hero-cta {
-    max-width: 100%;
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .skill-card {
+    flex: 0 0 140px;
+    padding: 20px 10px;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-icon i {
+    font-size: 2rem;
   }
 }
 
-/* --- スワイプ ドットインジケーター --- */
+/* --- スワイプ ドットインジケーター (JSで生成される要素用) --- */
 .swipe-dots {
   display: none;
 }
@@ -1024,7 +1107,8 @@ body.menu-open {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 16px;
+    margin-top: 20px;
+    padding-bottom: 10px;
   }
 
   .swipe-dot {
@@ -1033,20 +1117,17 @@ body.menu-open {
     border-radius: 50%;
     background: var(--color-text-muted);
     transition: var(--transition-fast);
-    cursor: pointer;
   }
 
   .swipe-dot.active {
     background: var(--color-accent-primary);
-    box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 }
 
 /* ===================================
-   プロジェクトモーダル
+   プロジェクトモーダル (Desktop Base)
    =================================== */
-
 /* Work card clickable */
 .work-card[data-project-id] {
   cursor: pointer;
@@ -1077,7 +1158,7 @@ body.menu-open {
   background: rgba(0, 0, 0, 0.85);
 }
 
-/* Modal content */
+/* Modal content (Desktop default) */
 .modal-content {
   position: relative;
   width: 90%;
@@ -1369,79 +1450,4 @@ body.menu-open {
 /* Modal scroll prevention */
 body.modal-open {
   overflow: hidden;
-}
-
-/* Responsive modal */
-@media (max-width: 768px) {
-  .modal-content {
-    width: 100%;
-    max-height: 100vh;
-    max-height: 100dvh;
-    border-radius: 0;
-    border: none;
-  }
-
-  .modal-close {
-    top: 12px;
-    right: 12px;
-    width: 44px;
-    height: 44px;
-    font-size: 1.75rem;
-  }
-
-  .modal-body {
-    padding: 20px 16px;
-  }
-
-  .modal-title {
-    font-size: 1.35rem;
-  }
-
-  .modal-meta {
-    flex-direction: column;
-    gap: 12px;
-    padding: 14px;
-  }
-
-  .modal-meta-item {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .modal-meta-value {
-    font-size: 0.825rem;
-  }
-
-  .modal-description {
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-
-  .modal-section-heading {
-    font-size: 0.925rem;
-  }
-
-  .modal-section-list li {
-    font-size: 0.825rem;
-    line-height: 1.65;
-  }
-
-  .gallery-nav {
-    width: 36px;
-    height: 36px;
-  }
-
-  .gallery-prev {
-    left: 8px;
-  }
-
-  .gallery-next {
-    right: 8px;
-  }
-
-  .modal-link {
-    padding: 10px 20px;
-    font-size: 0.8rem;
-  }
 }
