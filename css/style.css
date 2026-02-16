@@ -488,6 +488,13 @@ img {
   border: 1px solid var(--color-accent-primary);
 }
 
+.work-tag.category-tag {
+  background: var(--color-accent-secondary);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent-secondary);
+  font-weight: 700;
+}
+
 .work-links {
   display: flex;
   gap: 12px;
