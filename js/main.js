@@ -194,7 +194,7 @@ const projectsData = {
     },
     gallery: [
       // プレイ動画
-      { type: 'youtube', videoId: '51gza8n9dzo' },
+      { type: 'youtube', videoId: '2p-NjOfj548' },
       // ゲーム画面（画像）
       { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot1.png', alt: 'ゲーム画面1' },
       { type: 'image', src: 'images/pinballbattle/pinballbattle-screenshot2.png', alt: 'ゲーム画面2' },
