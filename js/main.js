@@ -449,30 +449,62 @@ const projectsData = {
     }
   },
   video1: {
-    title: 'Video Project (Placeholder)',
-    description: '制作中の映像作品です。詳細が決まり次第更新します。',
+    title: 'KOKORO',
+    description: '高校時代の友人と起業した会社で作成した映像作品です。実際に仕事をする経験を積むために作成しました。',
     tags: ['Video', 'Premiere Pro', 'After Effects'],
     meta: {
-      period: 'yyyy/mm - yyyy/mm',
-      team: '個人制作 / チーム',
-      role: 'Video Editor'
+      period: '2023/05 - 2024/03',
+      team: '4人',
+      role: '企画・撮影・編集・経理'
     },
     gallery: [
-      { type: 'placeholder', icon: '🎥' }
+      // 動画
+      { type: 'youtube', videoId: 'mn3NIoaWZQA' },
+      // スクリーンショット
+      { type: 'image', src: 'images/KOKORO/KOKORO-screenshot1.png', alt: 'スクリーンショット1' },
+      { type: 'image', src: 'images/KOKORO/KOKORO-screenshot2.png', alt: 'スクリーンショット2' },
+      { type: 'image', src: 'images/KOKORO/KOKORO-screenshot3.jpg', alt: 'スタジオ写真1' },
     ],
     sections: [
       {
         heading: '概要',
         items: [
-          'このプロジェクトは現在準備中です。',
-          '映像制作における技術や工夫した点をここに掲載予定です。'
+          '高校時代の友人と共同設立したクリエイターグループ「NewBizz」におけるクライアント案件の映像作品です。' +
+          '実社会での実務を通じて、納期遵守や品質保証といったプロとしての責任感を養うことを目的として制作しました。' +
+          '企画・撮影・編集の全工程をワンストップで担当し、クリエイティブとビジネスの両立を経験しました。',
         ]
-      }
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          '予算が限られていたため、大掛かりなセットを組むのではなく、自分たちの得意であるCGやVFXを積極的に活用しました。' +
+          '演出の一部をデジタルで補完することで、浮いたリソースを高品質な撮影機材やライティングに充て、被写体の魅力を最大限に引き出すシネマティックな映像表現を追求しました。',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          '企画・撮影・編集・経理',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          'クライアントの要望に応えるだけでなく、自分たちならではのクリエイティブな表現をどう提案し、納得してもらうかというバランスに一番苦労しました。' +
+          '限られた条件の中で、いかに妥協せずクオリティを上げるかをチームで模索し続けました。',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          '単に「作る」技術だけでなく、相手の意図を深く汲み取るコミュニケーションの大切さや、共通のゴールに向かって仲間と試行錯誤する達成感を知る、大きな転機となる経験でした。',
+        ]
+      },
     ],
     links: {
-      // youtube: '...'
+      youtube: 'https://www.youtube.com/watch?v=mn3NIoaWZQA'
     }
-  }
+  },
 };
 
 let currentSlideIndex = 0;
