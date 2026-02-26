@@ -162,7 +162,7 @@ function addWorkItem(work) {
       <h3 class="work-title">${work.title}</h3>
       <p class="work-description">${work.description}</p>
       <div class="work-tags">
-        ${work.tags.map(tag => `<span class="work-tag">${tag}</span>`).join('')}
+        ${work.tags.map((tag, i) => `<span class="work-tag${i === 0 ? ' category-tag' : ''}">${tag}</span>`).join('')}
       </div>
       <div class="work-links">
         ${work.github ? `<a href="${work.github}" class="work-link" target="_blank"><i class="devicon-github-original"></i> GitHub</a>` : ''}
@@ -607,7 +607,7 @@ function openModal(project) {
   // タグ
   const tagsContainer = document.getElementById('modalTags');
   tagsContainer.innerHTML = project.tags
-    .map(tag => `<span class="modal-tag">${tag}</span>`)
+    .map((tag, i) => `<span class="modal-tag${i === 0 ? ' category-tag' : ''}">${tag}</span>`)
     .join('');
 
   // リンク
@@ -631,7 +631,10 @@ function openModal(project) {
     if (project.links.youtube) {
       linksContainer.innerHTML += `
         <a href="${project.links.youtube}" class="modal-link" target="_blank" rel="noopener noreferrer">
-          ▶️ YouTube
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="1em" height="1em" fill="currentColor" style="vertical-align: -0.125em;">
+            <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+          </svg>
+          YouTube
         </a>
       `;
     }
