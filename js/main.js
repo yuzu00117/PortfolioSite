@@ -162,7 +162,7 @@ function addWorkItem(work) {
       <h3 class="work-title">${work.title}</h3>
       <p class="work-description">${work.description}</p>
       <div class="work-tags">
-        ${work.tags.map(tag => `<span class="work-tag">${tag}</span>`).join('')}
+        ${work.tags.map((tag, i) => `<span class="work-tag${i === 0 ? ' category-tag' : ''}">${tag}</span>`).join('')}
       </div>
       <div class="work-links">
         ${work.github ? `<a href="${work.github}" class="work-link" target="_blank"><i class="devicon-github-original"></i> GitHub</a>` : ''}
@@ -449,30 +449,62 @@ const projectsData = {
     }
   },
   video1: {
-    title: 'Video Project (Placeholder)',
-    description: '制作中の映像作品です。詳細が決まり次第更新します。',
+    title: 'KOKORO',
+    description: '高校時代の友人と起業した会社で作成した映像作品です。実際に仕事をする経験を積むために作成しました。',
     tags: ['Video', 'Premiere Pro', 'After Effects'],
     meta: {
-      period: 'yyyy/mm - yyyy/mm',
-      team: '個人制作 / チーム',
-      role: 'Video Editor'
+      period: '2023/05 - 2024/03',
+      team: '4人',
+      role: '企画・撮影・編集・経理'
     },
     gallery: [
-      { type: 'placeholder', icon: '🎥' }
+      // 動画
+      { type: 'youtube', videoId: 'mn3NIoaWZQA' },
+      // スクリーンショット
+      { type: 'image', src: 'images/KOKORO/KOKORO-screenshot1.png', alt: 'スクリーンショット1' },
+      { type: 'image', src: 'images/KOKORO/KOKORO-screenshot2.png', alt: 'スクリーンショット2' },
+      { type: 'image', src: 'images/KOKORO/KOKORO-screenshot3.jpg', alt: 'スタジオ写真1' },
     ],
     sections: [
       {
         heading: '概要',
         items: [
-          'このプロジェクトは現在準備中です。',
-          '映像制作における技術や工夫した点をここに掲載予定です。'
+          '高校時代の友人と共同設立したクリエイターグループ「NewBizz」におけるクライアント案件の映像作品です。' +
+          '実社会での実務を通じて、納期遵守や品質保証といったプロとしての責任感を養うことを目的として制作しました。' +
+          '企画・撮影・編集の全工程をワンストップで担当し、クリエイティブとビジネスの両立を経験しました。',
         ]
-      }
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          '予算が限られていたため、大掛かりなセットを組むのではなく、自分たちの得意であるCGやVFXを積極的に活用しました。' +
+          '演出の一部をデジタルで補完することで、浮いたリソースを高品質な撮影機材やライティングに充て、被写体の魅力を最大限に引き出すシネマティックな映像表現を追求しました。',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          '企画・撮影・編集・経理',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          'クライアントの要望に応えるだけでなく、自分たちならではのクリエイティブな表現をどう提案し、納得してもらうかというバランスに一番苦労しました。' +
+          '限られた条件の中で、いかに妥協せずクオリティを上げるかをチームで模索し続けました。',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          '単に「作る」技術だけでなく、相手の意図を深く汲み取るコミュニケーションの大切さや、共通のゴールに向かって仲間と試行錯誤する達成感を知る、大きな転機となる経験でした。',
+        ]
+      },
     ],
     links: {
-      // youtube: '...'
+      youtube: 'https://www.youtube.com/watch?v=mn3NIoaWZQA'
     }
-  }
+  },
 };
 
 let currentSlideIndex = 0;
@@ -575,7 +607,7 @@ function openModal(project) {
   // タグ
   const tagsContainer = document.getElementById('modalTags');
   tagsContainer.innerHTML = project.tags
-    .map(tag => `<span class="modal-tag">${tag}</span>`)
+    .map((tag, i) => `<span class="modal-tag${i === 0 ? ' category-tag' : ''}">${tag}</span>`)
     .join('');
 
   // リンク
@@ -599,7 +631,10 @@ function openModal(project) {
     if (project.links.youtube) {
       linksContainer.innerHTML += `
         <a href="${project.links.youtube}" class="modal-link" target="_blank" rel="noopener noreferrer">
-          ▶️ YouTube
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="1em" height="1em" fill="currentColor" style="vertical-align: -0.125em;">
+            <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
+          </svg>
+          YouTube
         </a>
       `;
     }
