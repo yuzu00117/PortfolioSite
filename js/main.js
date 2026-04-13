@@ -1,4 +1,4 @@
-﻿// ===================================
+// ===================================
 // ポートフォリオサイト - メインJavaScript
 // ===================================
 
@@ -255,6 +255,7 @@ const projectsData = {
     // 各種リンク
     links: {
       github: 'https://github.com/yuzu00117/PinballGame',
+      download: 'https://drive.google.com/drive/folders/1VNHn1jqdpE8iL7TcY6QGuv79pPkRlfIN?usp=drive_link',
       // youtube: 'https://youtube.com/watch?v=...'
     }
   },
@@ -319,7 +320,8 @@ const projectsData = {
       },
     ],
     links: {
-      github: 'https://github.com/yuzu00117/2025Gamejam'
+      github: 'https://github.com/yuzu00117/2025Gamejam',
+      download: 'https://drive.google.com/drive/folders/1UrbRydjYCnTOR2lE4nkZo4baK1mTHP_o?usp=drive_link'
     }
   },
   project3: {
@@ -386,7 +388,8 @@ const projectsData = {
       },
     ],
     links: {
-      github: 'https://github.com/yuzu00117/2025_HEW'
+      github: 'https://github.com/yuzu00117/2025_HEW',
+      download: 'https://drive.google.com/drive/folders/1PpA1sltiIPPCntTRtqJyH3Ps-eCOZiQu?usp=drive_link'
     }
   },
   project4: {
@@ -444,7 +447,8 @@ const projectsData = {
       },
     ],
     links: {
-      github: 'https://github.com/yuzu00117/tetris_rs'
+      github: 'https://github.com/yuzu00117/tetris_rs',
+      download: 'https://drive.google.com/drive/folders/1b8QxW_E_PH-JaC2nVoTwxSXFVkUc6DZC?usp=drive_link'
     }
   },
   video1: {
@@ -624,6 +628,17 @@ function openModal(project) {
       linksContainer.innerHTML += `
         <a href="${project.links.demo}" class="modal-link primary" target="_blank" rel="noopener noreferrer">
           🔗 Demo
+        </a>
+      `;
+    }
+    if (project.links.download) {
+      linksContainer.innerHTML += `
+        <a href="${project.links.download}" class="modal-link primary" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align: -0.125em;">
+            <!--!Font Awesome Free 6.4.2 by @fontawesome-->
+            <path d="M339 314.9L175.4 32h161.2l163.6 282.9H339zm-137.5 23.6L120.9 480h310.5L512 338.5H201.5zM154.1 67.4L0 338.5 80.6 480 237 208.8 154.1 67.4z"/>
+          </svg>
+          実行ファイル
         </a>
       `;
     }
