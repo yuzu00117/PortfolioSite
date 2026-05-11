@@ -451,6 +451,117 @@ const projectsData = {
       download: 'https://drive.google.com/drive/folders/1b8QxW_E_PH-JaC2nVoTwxSXFVkUc6DZC?usp=drive_link'
     }
   },
+  hs_project1: {
+    title: 'Unity一人称脱出ゲーム',
+    description: '高校在学中に個人で制作した一人称視点の脱出ゲームです。グラフィックに重点を置き、暗い雰囲気で不気味さを演出しました。',
+    tags: ['Game', 'C#', 'Unity', 'Blender'],
+    meta: {
+      period: '2021/09 - 2022/03',
+      team: '個人制作',
+      role: 'すべて'
+    },
+    gallery: [
+      { type: 'youtube', videoId: 'E8cDuL6Bxa8' },
+    ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'グラフィックに重点を置き、暗い雰囲気で不気味さを演出した一人称視点の脱出ゲームです。' +
+          'オブジェクトの乱雑配置による演出や、設計を工夫したプログラムの効率化に取り組みました。'
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          'オブジェクトの配置や照明を工夫し、不気味な雰囲気を視覚的に演出',
+          'コンポーネント設計を意識し、再利用しやすい構造でプログラムを整理',
+        ]
+      },
+      {
+        heading: '使用技術',
+        items: [
+          'Unity 2020.3.25 / C#',
+          'Blender（オブジェクトモデリング）',
+        ]
+      },
+    ],
+    links: {
+      youtube: 'https://www.youtube.com/watch?v=E8cDuL6Bxa8'
+    }
+  },
+  hs_project2: {
+    title: 'Blenderコーヒーセット',
+    description: 'ゲーム制作時のオブジェクト練習として制作した3Dモデルです。リアルさを追求し、マテリアルと光の表現にこだわりました。',
+    tags: ['3D', 'Blender'],
+    meta: {
+      period: '2021/05',
+      team: '個人制作',
+      role: 'すべて'
+    },
+    gallery: [
+      { type: 'placeholder', icon: '☕' },
+    ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'ゲーム制作のオブジェクト練習として制作した、リアルなコーヒーセットの3Dモデルです。' +
+          'マテリアル調整と光の表現、コーヒーミルの細部表現に注力しました。'
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          'PBRマテリアルを活用し、金属・陶器・液体それぞれの質感をリアルに表現',
+          'HDRIライティングで自然な光の当たり方を再現',
+        ]
+      },
+      {
+        heading: '使用技術',
+        items: [
+          'Blender 2.93',
+        ]
+      },
+    ],
+    links: {}
+  },
+  hs_project3: {
+    title: 'Processingデジタルアート',
+    description: 'Processingで制作したジェネラティブアート作品群です。アルゴリズムで生成される独特のビジュアル表現を探求しました。',
+    tags: ['Art', 'Processing'],
+    meta: {
+      period: '2021 - 2022',
+      team: '個人制作',
+      role: 'すべて'
+    },
+    gallery: [
+      { type: 'placeholder', icon: '🎨' },
+    ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'Processingを使って制作したジェネラティブアート作品群です。' +
+          'アルゴリズムによって生成される独特のビジュアル表現を探求し、各作品を約1週間で制作しました。'
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          '数式やノイズ関数を組み合わせ、毎回異なるパターンを生成する仕組みを実装',
+          'インタラクティブ性を加え、マウス操作でビジュアルが変化する作品も制作',
+        ]
+      },
+      {
+        heading: '使用技術',
+        items: [
+          'Processing 4.2',
+        ]
+      },
+    ],
+    links: {}
+  },
   video1: {
     title: 'KOKORO',
     description: '高校時代の友人と起業した会社で作成した映像作品です。実際に仕事をする経験を積むために作成しました。',

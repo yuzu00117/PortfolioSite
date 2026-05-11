@@ -1140,6 +1140,36 @@ body.modal-open {
   cursor: pointer;
 }
 
+/* 作品セクション区切り */
+.works-section-divider {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.5rem 0 1rem;
+  position: relative;
+}
+
+.works-section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.works-section-divider span {
+  display: inline-block;
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-bg-primary);
+  padding: 0 1.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
 /* Modal container */
 .project-modal {
   position: fixed;
