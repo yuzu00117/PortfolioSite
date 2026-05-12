@@ -1,4 +1,4 @@
-// ===================================
+﻿// ===================================
 // ポートフォリオサイト - メインJavaScript
 // ===================================
 
@@ -461,7 +461,12 @@ const projectsData = {
       role: 'すべて'
     },
     gallery: [
+      // 動画
       { type: 'youtube', videoId: 'E8cDuL6Bxa8' },
+      // スクリーンショット
+      { type: 'image', src: 'images/escapegame/escapegame-screenshot1.png', alt: 'スクリーンショット1' },
+      { type: 'image', src: 'images/escapegame/escapegame-screenshot2.png', alt: 'スクリーンショット2' },
+      { type: 'image', src: 'images/escapegame/escapegame-screenshot3.png', alt: 'スクリーンショット3' },
     ],
     sections: [
       {
@@ -500,7 +505,11 @@ const projectsData = {
       role: 'すべて'
     },
     gallery: [
-      { type: 'placeholder', icon: '☕' },
+      // スクリーンショット
+      { type: 'image', src: 'images/blender-coffeeset/blender-coffeeset-screenshot1.png', alt: 'スクリーンショット1' },
+      { type: 'image', src: 'images/blender-coffeeset/blender-coffeeset-screenshot2.png', alt: 'スクリーンショット2' },
+      { type: 'image', src: 'images/blender-coffeeset/blender-coffeeset-screenshot3.png', alt: 'スクリーンショット3' },
+      { type: 'image', src: 'images/blender-coffeeset/blender-coffeeset-screenshot4.png', alt: 'スクリーンショット4' },
     ],
     sections: [
       {
@@ -536,7 +545,10 @@ const projectsData = {
       role: 'すべて'
     },
     gallery: [
-      { type: 'placeholder', icon: '🎨' },
+      // スクリーンショット
+      { type: 'image', src: 'images/processing/processing-screenshot1.png', alt: 'スクリーンショット1' },
+      { type: 'image', src: 'images/processing/processing-screenshot2.png', alt: 'スクリーンショット2' },
+      { type: 'image', src: 'images/processing/processing-screenshot3.png', alt: 'スクリーンショット3' },
     ],
     sections: [
       {
