@@ -1,4 +1,4 @@
-﻿/* ===================================
+/* ===================================
    デザインシステム - CSS変数
    =================================== */
 :root {
@@ -239,6 +239,18 @@ img {
   color: var(--color-text-muted);
   letter-spacing: 0.2em;
   margin-bottom: 24px;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 300;
+  background: var(--color-accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
 .hero-role {
@@ -1139,6 +1151,8 @@ body.modal-open {
 .work-card[data-project-id] {
   cursor: pointer;
 }
+
+/* 作品セクション区切り */
 
 /* Modal container */
 .project-modal {
