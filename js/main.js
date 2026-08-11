@@ -451,6 +451,64 @@ const projectsData = {
       download: 'https://drive.google.com/drive/folders/1b8QxW_E_PH-JaC2nVoTwxSXFVkUc6DZC?usp=drive_link'
     }
   },
+  project5: {
+    title: '蹴鞠陰陽師',
+    description: '学内の共同制作で開発した3Dアクションゲームです。リフティングとキックでボールを蹴り、敵を攻撃してハイスコアを目指します。',
+    tags: ['Game', 'Unreal Engine', 'C++', 'Blueprint'],
+    meta: {
+      period: '2026/03 - 2026/07',
+      team: '11人（プログラマー6人、プランナー2人、デザイナー3人）',
+      role: 'プログラマー'
+    },
+    gallery: [
+      // プレイ動画
+      { type: 'youtube', videoId: '3M2f-rOWoWY' },
+    ],
+    sections: [
+      {
+        heading: '概要',
+        items: [
+          'リフティングとキックを使いボールで攻撃し、ハイスコアを目指す3Dアクションゲームです。' +
+          'プログラマーのリーダーとして、全体の意思決定、進捗管理、仕様の作成などを担当しました。' +
+          '主に、開発をスムーズに進めることを意識してプロジェクトを進めました。'
+        ]
+      },
+      {
+        heading: '工夫した点',
+        items: [
+          '仕様書に必要な情報を一元管理し、開発しやすい仕様書のフォーマットを整備',
+          'プランナーが作成した仕様に対し、実装に必要な情報を相談・追記することで仕様と実装のズレを防止',
+          'コーディングルールを制定し、バージョン管理ツールで自動的にレビューする仕組みを構築',
+        ]
+      },
+      {
+        heading: '担当箇所',
+        items: [
+          'プロジェクトの進行管理',
+          '仕様書の作成',
+          'プログラマーの進捗管理・コードレビュー',
+        ]
+      },
+      {
+        heading: '苦労した点',
+        items: [
+          '各職種との情報共有において、コミュニケーション不足を実感し、連携の取り方を模索',
+        ]
+      },
+      {
+        heading: '学んだこと',
+        items: [
+          'プロジェクトを円滑に進めるには、属人的な対応に頼らず仕組み化することの重要性を実感',
+        ]
+      },
+    ],
+    links: {
+      diversion: 'https://app.diversion.dev/repo/dv.repo.74a32eab-3010-48e4-99e8-a2ca23975d5b/workspace/dv.ws.640b0da4-fa6f-4b28-a05c-18b01da3a335/edit',
+      download: 'https://drive.google.com/file/d/1qh3BiPXRk9--m9lA1LK7y5z8F0x9ZW1b/view?usp=sharing',
+      youtube: 'https://youtu.be/3M2f-rOWoWY',
+      plan: 'https://drive.google.com/file/d/1Rxh0r9IULyoswEc1d3dONF9QaXbyZWrX/view?usp=sharing'
+    }
+  },
   video1: {
     title: 'KOKORO',
     description: '高校時代の友人と起業した会社で作成した映像作品です。実際に仕事をする経験を積むために作成しました。',
@@ -624,6 +682,16 @@ function openModal(project) {
         </a>
       `;
     }
+    if (project.links.diversion) {
+      linksContainer.innerHTML += `
+        <a href="${project.links.diversion}" class="modal-link" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" style="vertical-align: -0.125em;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+          </svg>
+          Diversion
+        </a>
+      `;
+    }
     if (project.links.demo) {
       linksContainer.innerHTML += `
         <a href="${project.links.demo}" class="modal-link primary" target="_blank" rel="noopener noreferrer">
@@ -649,6 +717,17 @@ function openModal(project) {
             <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
           </svg>
           YouTube
+        </a>
+      `;
+    }
+    if (project.links.plan) {
+      linksContainer.innerHTML += `
+        <a href="${project.links.plan}" class="modal-link" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="vertical-align: -0.125em;">
+            <!--!Font Awesome Free 6.4.2 by @fontawesome-->
+            <path d="M339 314.9L175.4 32h161.2l163.6 282.9H339zm-137.5 23.6L120.9 480h310.5L512 338.5H201.5zM154.1 67.4L0 338.5 80.6 480 237 208.8 154.1 67.4z"/>
+          </svg>
+          企画書
         </a>
       `;
     }

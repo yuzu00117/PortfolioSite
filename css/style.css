@@ -497,7 +497,8 @@ img {
 
 .work-links {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
 }
 
 .work-link {
@@ -506,6 +507,7 @@ img {
   gap: 6px;
   font-size: 0.875rem;
   color: var(--color-text-secondary);
+  white-space: nowrap;
   transition: var(--transition-fast);
 }
 
